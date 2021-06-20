@@ -1,11 +1,7 @@
-<%= form_with(model: @swiit, local: true) do |form| %>
-  <div class="swiit_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="swiit_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<h2>Write your new Swiit</h2>
+<hr>
+<%= render 'form'%>
+
+
+
+

@@ -1,0 +1,28 @@
+<%= form_with(model: @swiit, local: true ,url: choose_new_or_edit ) do |form| %>
+  <center>
+    <% if @swiit.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @swiit.errors.count %>There are errors.</h2>
+        <ul>
+        <% @swiit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="swiit_title">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="swiit_content">
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+    <%= form.submit %>
+    <br>
+    <br>
+    <hr>
+  </center>
+<% end %>
+<%= link_to "Return to Switter list screen", switters_path %>
