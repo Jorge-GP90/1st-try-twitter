@@ -1,2 +1,29 @@
 <h1>Switters#main</h1>
 <p>Find me in app/views/switters/main.html.erb</p>
+
+<center>
+<h1>Swiit list</h1>
+    <hr>
+    <p><%= notice %></p>
+    <br>
+    <table>
+    <tr>
+        <th>No. </th>
+        <th>Title</th>
+        <th>Content</th>
+    </tr>
+    <% @swiits.each do |swiit| %>
+    <tr>
+        <td><%= swiit.id %>.- </td>
+        <td><%= swiit.title %></td>
+        <td><%= swiit.content %></td>
+        <td><%= link_to 'Check the details', switter_path(swiit.id) %></td>
+        <td><%= link_to "Edit swiit", edit_switter_path(swiit.id), data: { confirm: 'Can I really edit it?' }%></td>
+        <td><%= link_to 'Delete swiit', switter_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
+    </tr>
+     <% end %>
+    </table>
+    <hr>
+    <br><br>
+     <%= link_to 'Post new swiit ', new_switter_path %> 
+</center>
