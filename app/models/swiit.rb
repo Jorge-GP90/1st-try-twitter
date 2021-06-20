@@ -1,0 +1,2 @@
+class Swiit < ApplicationRecord
+end
