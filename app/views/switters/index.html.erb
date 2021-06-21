@@ -9,13 +9,13 @@
     <table>
     <tr>
         <th>No. </th>
-        <th>Title</th>
+        <th>user</th>
         <th>Content</th>
     </tr>
     <% @swiit.each do |swiit| %>
     <tr>
         <td><%= swiit.id %>.- </td>
-        <td><%= swiit.title %></td>
+        <td><%= swiit.user %></td>
         <td><%= swiit.content %></td>
         <%= form.time_zone_select :time_zone %>
     </tr>

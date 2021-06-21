@@ -32,7 +32,7 @@ class SwittersController < ApplicationController
 
   def update
     if @swiit.update(swiit_params)
-      redirect_to switters_path, notice: "have been edited the Swiit with title: #{@swiit.id} .-  #{ @swiit.title }!"
+      redirect_to switters_path, notice: "have been edited the Swiit from user: #{@swiit.id} .-  #{ @swiit.user }!"
     else
       render :edit
     end
@@ -43,12 +43,12 @@ class SwittersController < ApplicationController
   
   def destroy
     @swiit.destroy
-    redirect_to switters_path, notice:"have been deleted the swiit with title: #{@swiit.id} .-  #{ @swiit.title }!"
+    redirect_to switters_path, notice:"have been deleted the swiit from user: #{@swiit.id} .-  #{ @swiit.user }!"
   end
 
   private
   def swiit_params
-    params.require(:swiit).permit(:title, :content)
+    params.require(:swiit).permit(:user, :content)
   end
 
   def set_swiit

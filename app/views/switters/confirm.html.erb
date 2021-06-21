@@ -1,9 +1,9 @@
 <center>
 <h3>Send with the following contents</h3>
 <%= form_with(model: @swiit, url: switters_path, local: true) do |form| %>
-  <%= form.hidden_field :title %>
+  <%= form.hidden_field :user %>
   <%= form.hidden_field :content %>
-  <p>title:<%= @swiit.title %></p>
+  <p>user:<%= @swiit.user %></p>
   <p>Content:<%= @swiit.content %></p>
   <%= form.submit  "Post" %>
   <%= form.submit "back", name: 'back' %>
