@@ -1,32 +1,50 @@
-<h1>Switters#Index</h1>
-<p>Find me in app/views/switters/index.html.erb</p>
-
-<center>
-<h1>Swiit list</h1>
-    <hr>
-    <p><%= notice %></p>
-    <br>
-    <table>
-    <tr>
-        <th>No. </th>
-        <th>user</th>
-        <th>Content</th>
-    </tr>
-    <% @swiit.each do |swiit| %>
-    <tr>
-        <td><%= swiit.id %>.- </td>
-        <td><%= swiit.user %></td>
-        <td><%= swiit.content %></td>
-        <%= form.time_zone_select :time_zone %>
-    </tr>
-    <tr>
-        <td><%= link_to 'Check the details', switter_path(swiit.id) %></td>
-        <td><%= link_to "Edit swiit", edit_switter_path(swiit.id), data: { confirm: 'Can I really edit it?' }%></td>
-        <td><%= link_to 'Delete swiit', switter_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
-    </tr>
-     <% end %>
-    </table>
-    <hr>
-    <br><br>
-     <%= link_to 'Post new swiit ', new_switter_path %> 
-</center>
+<head>
+  <title>
+    Swiiter
+  </title>  
+  <%= stylesheet_link_tag "layout.css" %>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar" id="main-navbar">
+      <h1>Swiiter</h1>
+    </div>
+    <div class="mainbody">
+      <p><%= notice %></p><br>
+      <div class="col1">
+        <%# User: <%= @swiit.user %> 
+        <%# N. Swiits :<%= @swiit.id.count %> 
+      </div>
+      <div class="col2">
+         <table class="main-swiits">
+            <%# <tr>
+              <%# <%= @swiit.user %>
+            <%# </tr>  %>
+            <% @swiit.each do |swiit| %>
+             <tr class="swiit-contetn">
+                <%# <><%= @swiit.user %>
+                <td colspan="3"><%= swiit.content %></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="tr-links">
+                <td class="td-btn"><%= link_to 'Details', switter_path(swiit.id), class: "btn-D" %></td>
+                <td class="td-btn"><%= link_to 'Edit', edit_switter_path(swiit.id), data: { confirm: 'Can I really edit it?' }, class: "btn-D"%></td>
+                <td class="td-btn"><%= link_to 'Delete ', switter_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' }, class: "btn-D"%></td>
+            </tr>
+            <% end %>
+            </table>
+      </div>
+      <div class="col3">
+        <table>
+          <tr>
+            <td><%= link_to 'Post new Swiit ', new_switter_path, class: "btn-new" %> </td>
+          <tr>     
+        </table>
+      </div>    
+    </div>
+  </div>
+</body>
+<footer>
+  <h3>Enjoy Switter</h3>
+</footer>
