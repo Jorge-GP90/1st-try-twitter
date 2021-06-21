@@ -1,8 +1,8 @@
 class SwittersController < ApplicationController
   before_action :set_swiit, only: [:show, :edit, :update, :destroy]
 
-  def main
-    @swiit = Swiit.all
+  def index
+    @swiit = Swiit.all.order(created_at:)
   end
 
   def new
@@ -54,5 +54,4 @@ class SwittersController < ApplicationController
   def set_swiit
     @swiit = Swiit.find(params[:id])
   end
-
 end

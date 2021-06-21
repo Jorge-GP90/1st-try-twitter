@@ -3,7 +3,7 @@ module SwittersHelper
         if action_name == 'new' || action_name == 'create'
           confirm_switters_path
         elsif action_name == 'edit'
-          swiiter_path
+          switter_path
         end
     end
 end

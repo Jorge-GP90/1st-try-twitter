@@ -1,5 +1,5 @@
-<h1>Switters#main</h1>
-<p>Find me in app/views/switters/main.html.erb</p>
+<h1>Switters#Index</h1>
+<p>Find me in app/views/switters/index.html.erb</p>
 
 <center>
 <h1>Swiit list</h1>
@@ -12,11 +12,14 @@
         <th>Title</th>
         <th>Content</th>
     </tr>
-    <% @swiits.each do |swiit| %>
+    <% @swiit.each do |swiit| %>
     <tr>
         <td><%= swiit.id %>.- </td>
         <td><%= swiit.title %></td>
         <td><%= swiit.content %></td>
+        <%= form.time_zone_select :time_zone %>
+    </tr>
+    <tr>
         <td><%= link_to 'Check the details', switter_path(swiit.id) %></td>
         <td><%= link_to "Edit swiit", edit_switter_path(swiit.id), data: { confirm: 'Can I really edit it?' }%></td>
         <td><%= link_to 'Delete swiit', switter_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>

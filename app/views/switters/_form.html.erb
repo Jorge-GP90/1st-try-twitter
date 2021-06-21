@@ -1,4 +1,4 @@
-<%= form_with(model: @swiit, local: true ,url: choose_new_or_edit ) do |form| %>
+<%= form_with(model: @swiit, local: true, url: choose_new_or_edit ) do |form| %>
   <center>
     <% if @swiit.errors.any? %>
       <div id="error_explanation">
@@ -17,9 +17,9 @@
     </div>
     <div class="swiit_content">
       <%= form.label :content %>
-      <%= form.text_field :content %>
+      <%= form.text_area :content, size: "80x10" %>
     </div>
-    <%= form.submit %>
+    <%= form.submit "Post" %>
     <br>
     <br>
     <hr>
